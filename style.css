@@ -40,3 +40,8 @@
   margin-left: 7%;
   padding-right: 5%;
 }
+
+body {
+  padding-top: 10%; /* 10% of viewport height */
+  margin: 0; /* Remove default body margin */
+}
