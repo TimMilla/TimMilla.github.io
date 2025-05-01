@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
     
     if (!navbar) {
-      console.error('❌ Navbar element not found!');
+      console.error('Navbar element not found!');
       return;
     } else {
-      console.log('✅ Navbar element found:', navbar);
+      console.log('Navbar element found:', navbar);
     }
   
     function checkScroll() {
@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let isScrolling;
     window.addEventListener('scroll', () => {
       window.clearTimeout(isScrolling);
-      isScrolling = setTimeout(checkScroll, 50);
+      isScrolling = setTimeout(checkScroll, 3);
     });
   
-    // Optional: Log when classes change
+    // Log when classes change
     const observer = new MutationObserver(() => {
       console.log('🎨 Current classes:', navbar.className);
     });

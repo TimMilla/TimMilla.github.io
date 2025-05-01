@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  transition: transform 1.0s ease-in-out;
+  transition: transform 1.8s ease-in-out;
   z-index: 1000;
   transform: translateX(0);
 }
@@ -36,12 +36,66 @@
 .navbar a:hover {
   background-color: #1d1f1d;
 }
+
+/* Pfeil-Stil (wird auf dem sichtbaren 5vw-Rest platziert) */
+.navbar::after {
+  content: "››"; /* oder "→", "►", ">" */
+  position: absolute;
+  right: 2%; /* Am rechten Rand des sichtbaren 5vw-Teils */
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 1.5em;
+  opacity: 0;
+  transition: opacity 2.5s ease-in-out;
+  pointer-events: none; /* Wichtig, damit Hover funktioniert */
+}
+
+/* Pfeil nur anzeigen, wenn Navbar eingeklappt ist */
+.navbar:not(:hover):not(.force-open)::after {
+  opacity: 0.8;
+}
+
+.arrow-transition {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 1.5em;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.arrow-transition::before {
+  content: "‹‹"; /* Dynamic arrow */
+  color: white;
+  font-size: 1.5em;
+}
+
+.navbar.is-closing .arrow-transition {
+  opacity: 0.8;
+}
+
 .main_text {
   margin-left: 7%;
   padding-right: 5%;
 }
 
 body {
-  padding-top: 10%; /* 10% of viewport height */
+  background-color: #f0f0f0;
+  padding-top: 15%; /* 15% of viewport height */
   margin: 0; /* Remove default body margin */
+}
+
+/* Für alle Browser */
+html {
+  scroll-padding-top: 15%; /* Höhe deines Headers */
+}
+
+/* Für Safari */
+@supports (scroll-padding-top: 15%) {
+  html {
+    scroll-padding-top: 15%;
+  }
 }
