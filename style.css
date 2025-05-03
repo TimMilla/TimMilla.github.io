@@ -6,20 +6,21 @@
   position: fixed;
   top: 4%;
   left: 0;
-  right: 10%;
-  height: 10%;
+  right: 15%;
+  height: 6%;
   background-color: #436144;
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  transition: transform 1.0s ease-in-out;
+  transition: transform 0.8s ease-in-out;
   z-index: 1000;
   transform: translateX(0);
+  font-size: 22px;
 }
 
 .navbar:not(:hover):not(.force-open) {
-  transform: translateX(calc(-100% + 5vw));
+  transform: translateX(calc(-100% + 5%));
   transition-delay: 1s;
 }
 
@@ -30,26 +31,31 @@
 .navbar a {
   color: white;
   text-decoration: none;
-  padding: 14px 20px;
-  display: block;
-  transition: background-color 0.3s ease-in-out;
+  padding: 2px 2px; /* Increased padding for larger text */
+  font-size: 22px; /* Your new font size */
+  transition: background-color 0.3s ease;
+  /* Ensure full-height hover coverage: */
+  height: 100%;
+  display: flex;
+  align-items: center; /* Vertically center text */
 }
 .navbar a:hover {
-  background-color: #1d1f1d;
+  background-color: #868986;
 }
 
-/* Pfeil-Stil (wird auf dem sichtbaren 5vw-Rest platziert) */
+
+/* Arrow indicator */
 .navbar::after {
-  content: "››"; /* oder "→", "►", ">" */
+  content: "››"; /* or "→" */
   position: absolute;
-  right: 2%; /* Am rechten Rand des sichtbaren 5vw-Teils */
-  top: 50%;
+  right: 10px; /* Position within the collapsed 50px space */
+  top: 40%;
   transform: translateY(-50%);
   color: white;
-  font-size: 1.5em;
+  font-size: 1.2em;
   opacity: 0;
-  transition: opacity 2.5s ease-in-out;
-  pointer-events: none; /* Wichtig, damit Hover funktioniert */
+  transition: opacity 0.5s ease; /* Faster fade */
+  pointer-events: none;
 }
 
 /* Pfeil nur anzeigen, wenn Navbar eingeklappt ist */
