@@ -8,7 +8,7 @@
   left: 0;
   right: 15%;
   height: 6%;
-  background-color: #436144;
+  background-color: #68886c;
   color: white;
   display: flex;
   align-items: center;
@@ -95,7 +95,7 @@
 
 body {
   background-color: #f0f0f0;
-  padding-top: 15%; /* 15% of viewport height */
+  padding-top: 0%; /* 15% of viewport height */
   margin: 0; /* Remove default body margin */
 }
 
@@ -118,4 +118,18 @@ html {
   margin: 0 auto;
   width: 100%;
   height: 100vh; /* Vollbildhöhe */
+}
+
+.gray-bg {
+  background: linear-gradient(to right, #f0f0f0, #e0e0e0); /* Grau-Variation */
+  padding: 2rem; /* Optional: Abstand zum Inhalt */
+}
+
+.green-bg {
+  background: #b1c4b3;
+  padding: 2rem;
+}
+
+.content_wrapper{
+  padding-top: 15%;
 }
